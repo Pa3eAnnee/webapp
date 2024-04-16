@@ -1,12 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
+import {Footer, Header} from "@/app/components";
 
 function AboutUs() {
     const [visibleMember, setVisibleMember] = useState<number | null>(null);
 
     return (
         <>
-            <div className="card px-4 py-8 md:px-6 lg:px-8">
+            <Header/>
+            <div className="card mx-8 px-4 py-8 md:px-6 lg:px-8">
                 <div className="flex flex-wrap mb-4">
                     <div className="w-full lg:w-6 pl-0 lg:pr-4">
                         <img
@@ -17,47 +19,37 @@ function AboutUs() {
                     </div>
                     <div className="w-full lg:w-6 pr-0 lg:pl-4 mt-3 lg:mt-0">
                         <div className="font-bold text-4xl mb-4 text-900">
-                            About us
+                            A propos de nous
                         </div>
-                        <p className="line-height-3 mt-0 mb-3 p-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
+                        <p className="line-height-3 mt-0 mb-3 p-0 fontlarge">
+                            Notre organisation, l'Organisme de Décentralisation Mondiale (ODM), incarne une vision
+                            audacieuse pour l'avenir de l'humanité. Nous sommes des défenseurs fervents de la
+                            décentralisation et des technologies blockchain, convaincus de leur potentiel
+                            révolutionnaire pour transformer la société.
                         </p>
-                        <p className="line-height-3 mt-0 mb-3 p-0">
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptatem accusantium doloremque laudantium, totam
-                            rem aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi architecto beatae vitae dicta
-                            sunt explicabo. Nemo enim ipsam voluptatem quia
-                            voluptas sit aspernatur aut odit aut fugit, sed quia
-                            consequuntur magni dolores eos qui ratione
-                            voluptatem sequi nesciunt. Neque porro quisquam est,
-                            qui dolorem ipsum quia dolor sit amet, consectetur,
-                            adipisci velit, sed quia non numquam eius modi
-                            tempora incidunt ut labore et dolore magnam aliquam
-                            quaerat voluptatem.
+                        <p className="line-height-3 mt-0 mb-3 p-0 fontlarge">
+                            En tant que gardiens de la blockchain, nous assumons la responsabilité de protéger cette
+                            technologie innovante qui offre une transparence, une sécurité et une équité sans précédent.
+                            En promouvant la décentralisation à travers l'éducation et des événements, nous cherchons à
+                            autonomiser les individus, à renforcer la confiance dans les institutions et à stimuler
+                            l'innovation à l'échelle mondiale.
                         </p>
-                        <p className="line-height-3 my-0 p-0">
-                            Ut enim ad minima veniam, quis nostrum
-                            exercitationem ullam corporis suscipit laboriosam,
-                            nisi ut aliquid ex ea commodi consequatur? Quis
-                            autem vel eum iure reprehenderit qui in ea voluptate
-                            velit esse quam nihil molestiae consequatur, vel
-                            illum qui dolorem eum fugiat quo voluptas nulla
-                            pariatur?
+                        <p className="line-height-3 my-0 p-0 fontlarge">
+                            L'importance de notre travail réside dans notre capacité à façonner activement l'avenir de
+                            l'évolution humaine. En encourageant l'adoption et le développement de la blockchain, nous
+                            contribuons à créer un monde où le contrôle des données et des transactions est redistribué
+                            de manière équitable, où les opportunités sont accessibles à tous, indépendamment des
+                            frontières géographiques ou des barrières socio-économiques.
+                        </p>
+                        <p className="line-height-3 my-0 p-0 fontlarge">
+                            En nous engageant dans cette mission, nous ouvrons la voie à une nouvelle ère de progrès,
+                            de collaboration et de liberté pour l'ensemble de l'humanité.
                         </p>
                     </div>
                 </div>
                 <div className="mt-3 md:mt-8">
                     <span className="block text-900 font-bold text-3xl mb-3 text-center">
-                        Our Team
+                        Notre équipe
                     </span>
                     <div className="text-center text-lg line-height-3 mb-6">
                         Faucibus ornare suspendisse sed nisi. Nisl rhoncus
@@ -71,7 +63,7 @@ function AboutUs() {
                                 onMouseLeave={() => setVisibleMember(-1)}
                             >
                                 <img
-                                    src="/demo/images/blocks/team/team-1.png"
+                                    src="/demo/images/aboutus/neven.webp"
                                     className="w-full block"
                                     alt="Team 1"
                                 />
@@ -84,10 +76,10 @@ function AboutUs() {
                                     >
                                         <div className="flex flex-column p-5 h-full">
                                             <span className="block font-medium text-white text-xl mb-3">
-                                                Jeff Davies
+                                                Mr Neven
                                             </span>
                                             <span className="font-medium text-400">
-                                                Software Developer
+                                                Blockchain Specialist
                                             </span>
                                             <div className="mt-auto">
                                                 <a
@@ -121,7 +113,7 @@ function AboutUs() {
                                 onMouseLeave={() => setVisibleMember(-1)}
                             >
                                 <img
-                                    src="/demo/images/blocks/team/team-2.png"
+                                    src="/demo/images/aboutus/vanande.webp"
                                     className="w-full block"
                                     alt="Team 2"
                                 />
@@ -134,10 +126,10 @@ function AboutUs() {
                                     >
                                         <div className="flex flex-column p-5 h-full">
                                             <span className="block font-medium text-white text-xl mb-3">
-                                                Kristin Watson
+                                                Mr Vanande
                                             </span>
                                             <span className="font-medium text-400">
-                                                UI/UX Designer
+                                                Responsable Education
                                             </span>
                                             <div className="mt-auto">
                                                 <a
@@ -171,7 +163,7 @@ function AboutUs() {
                                 onMouseLeave={() => setVisibleMember(-1)}
                             >
                                 <img
-                                    src="/demo/images/blocks/team/team-3.png"
+                                    src="/demo/images/aboutus/janin.webp"
                                     className="w-full block"
                                     alt="Team 3"
                                 />
@@ -184,10 +176,10 @@ function AboutUs() {
                                     >
                                         <div className="flex flex-column p-5 h-full">
                                             <span className="block font-medium text-white text-xl mb-3">
-                                                Jenna Williams
+                                                Mr Janin
                                             </span>
                                             <span className="font-medium text-400">
-                                                Marketing Specialist
+                                                Infrastructure Specialist
                                             </span>
                                             <div className="mt-auto">
                                                 <a
@@ -221,7 +213,7 @@ function AboutUs() {
                                 onMouseLeave={() => setVisibleMember(-1)}
                             >
                                 <img
-                                    src="/demo/images/blocks/team/team-4.png"
+                                    src="/demo/images/aboutus/chat.jpg"
                                     className="w-full block"
                                     alt="Team 4"
                                 />
@@ -234,10 +226,10 @@ function AboutUs() {
                                     >
                                         <div className="flex flex-column p-5 h-full">
                                             <span className="block font-medium text-white text-xl mb-3">
-                                                Joe Clifford
+                                                Mr LeChat
                                             </span>
                                             <span className="font-medium text-400">
-                                                Customer Relations
+                                                Relations Clients
                                             </span>
                                             <div className="mt-auto">
                                                 <a
@@ -267,6 +259,7 @@ function AboutUs() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }
