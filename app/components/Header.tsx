@@ -7,6 +7,38 @@ import {Button} from "primereact/button";
 import React, {useRef, useState} from "react";
 import {LogoSvg} from "@/app/components/Logo-svg";
 
+import {ThirdwebProvider, ConnectButton,} from "thirdweb/react";
+import {createWallet, walletConnect, inAppWallet,} from "thirdweb/wallets";
+import {createThirdwebClient} from "thirdweb";
+
+const client = createThirdwebClient({
+    clientId: "YOUR_CLIENT_ID",
+});
+
+const wallets = [
+    createWallet("io.metamask"),
+    createWallet("com.coinbase.wallet"),
+    walletConnect(),
+    inAppWallet({
+        auth: {
+            options: ["email", "google"],
+        },
+    }),
+];
+
+export default function App() {
+    return (
+        <ThirdwebProvider>
+            <ConnectButton
+                client={client}
+                wallets={wallets}
+                theme={"dark"}
+                connectModal={{ size: "wide" }}
+            />
+        </ThirdwebProvider>
+    );
+}
+
 export const Header = () => {
     const menuRef = useRef<HTMLElement | null>(null);
     const [isHidden, setIsHidden] = useState(false);
@@ -85,12 +117,8 @@ export const Header = () => {
                             <Ripple/>
                         </a>
                     </li>
-                    <li>
-                        <Button
-                            type="button"
-                            label="Connect Wallet"
-                            className="m-0 mt-3 md:mt-0 md:ml-5"
-                        ></Button>
+                    <li className="m-0 mt-3 md:mt-0 md:ml-5">
+                        <App />
                     </li>
                 </ul>
             </div>
