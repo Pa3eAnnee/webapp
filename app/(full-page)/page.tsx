@@ -1,15 +1,9 @@
 "use client";
-import type {NodeRef, Page} from "@/types";
-import Link from "next/link";
+import type {Page} from "@/types";
 import {Button} from "primereact/button";
-import {Ripple} from "primereact/ripple";
-import {StyleClass} from "primereact/styleclass";
-import {classNames} from "primereact/utils";
 import React, {useContext, useEffect, useRef, useState} from "react";
-import {LayoutContext} from "../../layout/context/layoutcontext";
-import _default from "chart.js/dist/plugins/plugin.tooltip";
-import backgroundColor = _default.defaults.backgroundColor;
-import {Footer, Header, LogoSvg} from "@/app/components";
+import {LayoutContext} from "@/layout/context/layoutcontext";
+import {Footer, Header} from "@/app/components";
 
 const LandingPage: Page = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -97,7 +91,7 @@ const LandingPage: Page = () => {
                             Nos Missions
                         </span>
                         <span className="text-700 block text-xl mb-8 text-center line-height-3">
-                            Nos missions s'articulent autour de la protection de la blockchain, de la promotion de la décentralisation à travers l'éducation et la tenue d'événements ainsi que des services pour la transition technologique.
+                            Nos missions s&apos;articulent autour de la protection de la blockchain, de la promotion de la décentralisation à travers l&apos;éducation et la tenue d&apos;événements ainsi que des services pour la transition technologique.
                         </span>
 
                         <div
@@ -140,7 +134,7 @@ const LandingPage: Page = () => {
                             Devenir membre
                         </span>
                         <span className="text-700 block text-xl mb-8 text-center line-height-3">
-                            Rejoignez notre communauté en devenant membre et participez à la protection de la blockchain, à l'éducation sur la décentralisation et à la fourniture de services innovants.
+                            Rejoignez notre communauté en devenant membre et participez à la protection de la blockchain, à l&apos;éducation sur la décentralisation et à la fourniture de services innovants.
                         </span>
                         <div id="landing-card" className="card px-4 py-8 md:px-6 lg:px-8">
                             <div className="flex flex-wrap mb-4">
@@ -156,27 +150,27 @@ const LandingPage: Page = () => {
                                         Notre carte de membre NFT
                                     </div>
                                     <p className="line-height-3 mt-0 mb-3 p-0 fontlarge">
-                                        L'ODM, l'Organisme de Décentralisation Mondiale, offre une opportunité unique à
-                                        travers son NFT représentant la carte de membre. Ce NFT incarne l'engagement
+                                        L&apos;ODM, l&apos;Organisme de Décentralisation Mondiale, offre une opportunité unique à
+                                        travers son NFT représentant la carte de membre. Ce NFT incarne l&apos;engagement
                                         envers la protection de la blockchain et la promotion de la décentralisation à
-                                        travers l'éducation et les événements.
+                                        travers l&apos;éducation et les événements.
                                     </p>
                                     <p className="line-height-3 mt-0 mb-3 p-0 fontlarge">
                                         Les membres soutiennent notre cause en devenant des gardiens de la blockchain,
                                         contribuant ainsi à préserver sa sécurité et son intégrité. En rejoignant notre
                                         organisation, ils deviennent des acteurs clés dans la diffusion de la
-                                        décentralisation, une force qui permet à chacun d'avoir un contrôle sur ses
+                                        décentralisation, une force qui permet à chacun d&apos;avoir un contrôle sur ses
                                         propres données et transactions.
                                     </p>
                                     <p className="line-height-3 my-0 p-0 fontlarge">
-                                        Devenir membre de l'ODM signifie s'engager envers un avenir numérique plus
+                                        Devenir membre de l&apos;ODM signifie s&apos;engager envers un avenir numérique plus
                                         équitable et sécurisé pour tous. En portant fièrement notre NFT en tant que
                                         carte de membre sur le web, nos membres symbolisent leur soutien à notre
                                         mission. Ce NFT devient une représentation virtuelle de leur adhésion à nos
                                         valeurs et à notre lutte pour un monde numérique plus libre et transparent. En
                                         partageant et affichant cet emblème sur les plateformes en ligne, nos membres
                                         contribuent à sensibiliser davantage aux enjeux de la décentralisation et à
-                                        rallier d'autres individus à notre cause.
+                                        rallier d&apos;autres individus à notre cause.
                                     </p>
                                 </div>
                             </div>
@@ -204,7 +198,7 @@ const LandingPage: Page = () => {
                                             Don Unique
                                         </span>
                                         <Button
-                                            label="J'aime la blockchain"
+                                            label="J&apos;aime la blockchain"
                                             className="px-5 w-full mt-6"
                                             outlined
                                             icon="pi pi-arrow-right"
