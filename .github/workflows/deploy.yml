@@ -22,12 +22,12 @@ jobs:
                   port: ${{ secrets.VPS_PORT }}
                   script: |
                       if [ ! -d "/image/.git" ]; then
-                        git clone https://github.com/Pa3eAnnee/webapp.git /image
+                        git clone https://github.com/Pa3eAnnee/webapp.git /image/webapp
                       else
-                        cd /image
+                        cd /image/webapp
                         git pull origin main
                         fi
-                      cd /image
+                      cd /image/webapp
                       npm install
                       npm run build
                       docker compose up -d
