@@ -11,19 +11,19 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
             - name: Set up Docker Buildx
-              uses: docker/setup-buildx-action@v1
+              uses: docker/setup-buildx-action@v3
 
             - name: Login to Docker Hub
-              uses: docker/login-action@v1
+              uses: docker/login-action@v2
               with:
                   username: ${{ secrets.DOCKER_USERNAME }}
                   password: ${{ secrets.DOCKER_PASSWORD }}
 
             - name: Build and push Docker image
-              uses: docker/build-push-action@v2
+              uses: docker/build-push-action@v5
               with:
                   push: true
                   tags: baguette42/webapp:latest
@@ -34,20 +34,16 @@ jobs:
     
         steps:
           - name: Checkout code
-            uses: actions/checkout@v2
-    
-          - name: Install SSH Client
-            run: sudo apt-get install -y sshpass
-    
+            uses: actions/checkout@v4
+
           - name: Deploy to VPS
-            env:
-              VPS_USER: ${{ secrets.VPS_USER }}
-              VPS_IP: ${{ secrets.VPS_IP }}
-              VPS_PASSWORD: ${{ secrets.VPS_PASSWORD }}
-            run: |
-              sshpass -p $VPS_PASSWORD ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_IP << 'EOF'
-                docker pull your-dockerhub-username/your-image-name:latest
-                docker stop myapp || true
-                docker rm myapp || true
-                docker run -d --name myapp -p 80:3001 baguette42/webapp:latest
-              EOF
+            uses: appleboy/ssh-action@v1.0.3
+            with:
+              host: ${{ secrets.VPS_IP }}
+              username: ${{ secrets.VPS_USER }}
+              password: ${{ secrets.VPS_PASSWORD }}
+              port: ${{ secrets.VPS_PORT }}
+              script: |
+                cd /image
+                docker compose pull baguette42/webapp:latest
+                docker compose up -d
