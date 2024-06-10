@@ -42,7 +42,7 @@ const LandingPage: Page = () => {
                         <div
                             className="col-12 md:col-4 flex flex-column gap-4 flex-order-1 md:flex-order-0 align-items-center md:align-items-start text-center md:text-left">
                             <span className="block text-900 font-bold text-4xl">
-                                Organisme de Décentralisation Mondiale
+                                Organisme de Décentralisation Mondiale V2
                             </span>
                             <span className="block text-700 text-lg">
                                 Protecteur de la blockchain, promoteur de la décentralisation, éclairant le chemin vers un avenir numérique équitable et libre.
