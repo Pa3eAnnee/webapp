@@ -21,7 +21,7 @@ jobs:
                   password: ${{ secrets.VPS_PASSWORD }}
                   port: ${{ secrets.VPS_PORT }}
                   script: |
-                      if [ ! -d "/image/.git" ]; then
+                      if [ ! -d "/image/webapp/.git" ]; then
                         git clone https://github.com/Pa3eAnnee/webapp.git /image/webapp
                       else
                         cd /image/webapp
