@@ -31,18 +31,23 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         needs: build
-
+    
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-
-            - name: Deploy to VPS
-              env:
-                  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-              run: |
-                  ssh -o StrictHostKeyChecking=no baguette@51.222.87.50 << 'EOF'
-                    docker pull baguette42/webapp:latest
-                    docker stop webapp || true
-                    docker rm webapp || true
-                    docker run -d --name webapp -p 80:3001 baguette42/webapp:latest
-                  EOF
+          - name: Checkout code
+            uses: actions/checkout@v2
+    
+          - name: Install SSH Client
+            run: sudo apt-get install -y sshpass
+    
+          - name: Deploy to VPS
+            env:
+              VPS_USER: ${{ secrets.VPS_USER }}
+              VPS_IP: ${{ secrets.VPS_IP }}
+              VPS_PASSWORD: ${{ secrets.VPS_PASSWORD }}
+            run: |
+              sshpass -p $VPS_PASSWORD ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_IP << 'EOF'
+                docker pull your-dockerhub-username/your-image-name:latest
+                docker stop myapp || true
+                docker rm myapp || true
+                docker run -d --name myapp -p 80:3001 baguette42/webapp:latest
+              EOF
